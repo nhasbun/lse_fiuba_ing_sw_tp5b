@@ -6,7 +6,7 @@
  * Version: 0.1.0
  * Creation Date: 2019/03/01
  */
- 
+
 /*=====[Inclusion of own header]=============================================*/
 
 #include "alumnos.h"
@@ -34,6 +34,11 @@
 
 /*=====[Implementations of private functions]================================*/
 
+/**
+ * @brief Rutina principal para serializar datos
+ *
+ * Rutina principal serializa todos los datos de alumnos existentes en el sistema
+ */
 int main(int argc, char *argv[]) {
     char cadena[2048];
 

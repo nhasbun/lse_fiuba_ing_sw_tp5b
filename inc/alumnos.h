@@ -29,6 +29,12 @@ extern "C" {
 
 /*=====[Definitions of public data types]====================================*/
 
+/**
+ * @brief Estructura genérica para almacenar datos de alumnos
+ *
+ * En el trabajo práctico se espera que cada alumno agregue sus datos
+ * al repositorio usando esta estructura.
+ */
 typedef struct alumno_s {
     char apellidos[30];
     char nombres[30];
@@ -39,8 +45,30 @@ typedef struct alumno_s {
 
 /*=====[Prototypes (declarations) of public functions]=======================*/
 
+/**
+ * @brief Serialización de datos de un alumno
+ *
+ * Entrega de todos los datos de un almuno en una única cadena de texto.
+ *
+ * @param cadena búfer donde se dejará la cadena de texto serializada
+ * @param espacio espacio disponible en el búfer para escritura (bytes)
+ * @param alumno struct con los datos del alumno
+ * @return true para datos correctamente serializados
+ * @return false cuando faltó espacio en el búfer para serializar correctamente
+ */
 bool SerializarAlumno(char * cadena, size_t espacio, const alumno_t alumno);
 
+/**
+ * @brief Serialización de datos de todos los alumnos
+ *
+ * Entrega de datos serializados para todos los alumnos disponibles en el
+ * programa.
+ *
+ * @param cadena búfer donde se dejará la cadena de texto serializada
+ * @param espacio espacio disponible en el búfer para escritura (bytes)
+ * @return true para datos correctamente serializados
+ * @return false cuando faltó espacio en el búfer para serializar correctamente
+ */
 bool SerializarAlumnos(char * cadena, size_t espacio);
 
 /*=====[Prototypes (declarations) of public interrupt functions]=============*/

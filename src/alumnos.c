@@ -6,7 +6,7 @@
  * Version: 0.1.0
  * Creation Date: 2019/03/01
  */
- 
+
 /*=====[Inclusion of own header]=============================================*/
 
 #include "alumnos.h"
@@ -25,18 +25,21 @@
 
 /*=====[Definitions of public global variables]==============================*/
 
+//! Formato de alumno ejemplo original
 static const struct alumno_s ESTEBAN_VOLENTINI = {
     .apellidos = "VOLENTINI",
     .nombres = "Esteban Daniel",
     .documento = "23.517.968",
 };
 
+//! Alumno nicolas hasbun agregado para tp
 static const struct alumno_s NICOLAS_HASBUN = {
     .apellidos = "Hasbun",
     .nombres = "Nicolas Ignacio",
     .documento = "16471369-5",
 };
 
+//! Arreglo con referencia a todos los datos de alumnos
 const alumno_t ALUMNOS[] = {
     &ESTEBAN_VOLENTINI,
     &NICOLAS_HASBUN,
@@ -60,7 +63,7 @@ bool SerializarAlumno(char * cadena, size_t espacio, const alumno_t alumno) {
         "\"nombres\":\"%s\""
     "}";
 
-    resultado = snprintf(cadena, espacio, FORMATO, 
+    resultado = snprintf(cadena, espacio, FORMATO,
              alumno->documento, alumno->apellidos, alumno->nombres);
 
     return (resultado >= 0);
